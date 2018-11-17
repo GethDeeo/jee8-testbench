@@ -1,0 +1,12 @@
+.mvn/wrapper/maven-wrapper.jar
+server/
+**/target/
+
+# IDEA
+**/.idea/
+**/*.iml
+
+# Eclipse
+**/.settings/
+**/.classpath
+**/.project
