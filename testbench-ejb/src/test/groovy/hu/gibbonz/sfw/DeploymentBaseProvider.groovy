@@ -5,7 +5,7 @@ import org.jboss.shrinkwrap.api.spec.WebArchive
 import org.jboss.shrinkwrap.resolver.api.maven.Maven
 
 class DeploymentBaseProvider {
-    static def DEYPLOYMENT_BASE = ShrinkWrap.create(WebArchive.class)
+    static def WAR = ShrinkWrap.create(WebArchive.class)
             .addAsLibraries(Maven.configureResolver().loadPomFromFile('../testbench-bom/pom.xml').resolve(
                     'org.codehaus.groovy:groovy-all:pom:?',
                     'com.h2database:h2:'

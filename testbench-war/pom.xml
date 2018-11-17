@@ -12,6 +12,12 @@
   </properties>
 
   <dependencies>
+    <dependency>
+      <groupId>hu.gibbonz.sfw</groupId>
+      <artifactId>testbench-ejb</artifactId>
+      <type>ejb</type>
+      <scope>provided</scope>
+    </dependency>
   </dependencies>
 
   <build>

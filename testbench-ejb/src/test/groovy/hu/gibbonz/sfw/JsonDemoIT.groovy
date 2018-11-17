@@ -12,10 +12,10 @@ import javax.inject.Inject
 class JsonDemoIT {
     @Inject
     private MySimpleEjb mySimpleEjb
+
     @Deployment
     static Archive<?> createDeployment() {
-        println(DeploymentBaseProvider.DEYPLOYMENT_BASE.toString(true))
-        DeploymentBaseProvider.DEYPLOYMENT_BASE
+        DeploymentBaseProvider.WAR
                 .addClass(MySimpleEntity.class)
                 .addClass(MySimpleEjb.class)
     }

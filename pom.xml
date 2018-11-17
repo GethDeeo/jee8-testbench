@@ -8,7 +8,8 @@
   <modules>
     <module>testbench-bom</module>
     <module>testbench-ejb</module>
-    <!--module>testbench-war</module-->
+    <module>testbench-war</module>
+    <module>testbench-ear</module>
   </modules>
   <properties>
     <version.groovy.eclipse.compiler>3.0.0-01</version.groovy.eclipse.compiler>
@@ -33,6 +34,18 @@
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>hu.gibbonz.sfw</groupId>
+        <artifactId>testbench-ejb</artifactId>
+        <version>${project.version}</version>
+        <type>ejb</type>
+      </dependency>
+      <dependency>
+        <groupId>hu.gibbonz.sfw</groupId>
+        <artifactId>testbench-war</artifactId>
+        <version>${project.version}</version>
+        <type>war</type>
+      </dependency>
       <dependency>
         <groupId>hu.gibbonz.sfw</groupId>
         <artifactId>testbench-bom</artifactId>
@@ -220,6 +233,10 @@
         <plugin>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.2.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-ear-plugin</artifactId>
+          <version>3.0.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-failsafe-plugin</artifactId>

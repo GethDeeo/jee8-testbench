@@ -9,24 +9,26 @@ import org.junit.runner.RunWith
 import javax.inject.Inject
 
 @RunWith(Arquillian.class)
-class JsonDemoIT {
+class WebIT {
     @Inject
-    private MySimpleEjb mySimpleEjb
+    MySimpleEjb mySimpleEjb
+
     @Deployment
     static Archive<?> createDeployment() {
-        println(DeploymentBaseProvider.DEYPLOYMENT_BASE.toString(true))
-        DeploymentBaseProvider.DEYPLOYMENT_BASE
-                .addClass(MySimpleEntity.class)
-                .addClass(MySimpleEjb.class)
+        def a = DeploymentBaseProvider.ear(
+                DeploymentBaseProvider.EJB
+                        .addClass(MySimpleEjb.class),
+                DeploymentBaseProvider.WAR
+                        .addClass(SfwApplication.class)
+                        .addClass(SfwRest.class),
+                WebIT.class
+        )
+        println(a.toString(true))
+        a
     }
 
     @Test
     void test() {
-        mySimpleEjb.simpleMethod()
-    }
-
-    @Test
-    void test2() {
         mySimpleEjb.simpleMethod()
     }
 }
